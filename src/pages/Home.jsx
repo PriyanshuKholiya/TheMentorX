@@ -106,6 +106,12 @@ const Home = () => {
             <div className="sticky top-32">
               <div className="w-12 h-[2px] bg-gold mb-6"></div>
               <h2 className="text-gold-dark text-xs uppercase tracking-[5px] font-bold">About Us</h2>
+              <div className="mt-8 space-y-6">
+                <p className="text-mid-gray text-sm leading-relaxed border-l-[3px] border-gold pl-5">
+                  MENTORx is an initiative undertaken by Dr. Munish Jindal and Dr. Nancy Juneja. Both founders have been conferred with the highest civilian honor, the "Karmaveer Chakra," by United Nations-iCongo.
+                </p>
+            
+              </div>
             </div>
           </div>
           
@@ -114,19 +120,35 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="md:col-span-8 space-y-10 text-white/70 text-lg leading-loose font-light"
+            className="md:col-span-8 space-y-8 text-white/70 text-lg leading-loose font-light"
           >
-            <p className="font-serif text-3xl md:text-4xl text-white leading-snug">
-              MENTORx is a global conglomerate in education and technology (EdTech).
+            <p className="font-serif text-3xl md:text-4xl text-white leading-snug mb-10">
+              A Global Powerhouse in Education and Technology, making a difference to millions of minds around the globe.
             </p>
+            
             <p>
-              Incorporated with the vision to educate, empower, and elevate. We partner with versatile organizations, universities, institutes, corporate houses, and leaders globally to drive innovation.
+              Incorporated with the vision "to educate, to empower, to elevate," MENTORx is a shared platform where acclaimed mentors, specialists, and success-seeking mentees converge globally and locally. We know, believe, and work towards the philosophy that there is no dearth of opportunities; the bigger challenge is to identify them and help convert them into sustainable business propositions.
             </p>
+            
             <p>
-              We run highly specialized modules in AI & Robotics, Design Thinking, Startup Mentoring, Industry 5.0, and Ph.D frameworks to build the leaders of tomorrow.
+              Our ecosystem is driven by a Corporate Advisory Board of seasoned professionals, government officials, entrepreneurs, scientists, diplomats, and CxOs. Together, we address long-standing needs by curating skill development programs and entrepreneurship modules for handholding students, universities, startups, and corporate houses.
             </p>
-            <Link to="/about" className="inline-block mt-4 text-gold hover:text-gold-light text-sm uppercase tracking-widest border-b border-gold hover:border-gold-light transition-colors pb-1">
-              Read Our Full Story
+
+            <div className="my-12 p-8 bg-[#0D0D0D] border border-gold-dark/20 relative overflow-hidden group hover:border-gold/50 transition-colors duration-500">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-full pointer-events-none"></div>
+              <h3 className="font-serif text-2xl text-white mb-4">The Scale of Our Impact</h3>
+              <p className="text-sm text-mid-gray leading-relaxed mb-0">
+                We have touched the lives of more than 2 million people across the globe through 700+ Seminars and Conclaves, conducting more than 2,000 workshops on over 300+ topics. Furthermore, MENTORx has certified more than 1,000 corporate and master trainers through our Train the Trainer programs.
+              </p>
+            </div>
+            
+            
+
+            <Link to="/about" className="inline-flex items-center mt-12 text-gold hover:text-white text-sm uppercase tracking-widest transition-colors group">
+              <span className="border-b border-gold group-hover:border-white pb-1">Discover the MENTORx Journey</span>
+              <svg className="w-4 h-4 ml-3 group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </Link>
           </motion.div>
         </div>
