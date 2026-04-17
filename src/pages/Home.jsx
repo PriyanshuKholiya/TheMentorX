@@ -281,6 +281,80 @@ const Home = () => {
         </div>
       </section>
 
+      {/* SECTION 5.1: MENTORx WOMEN (NEW) */}
+      <section className="py-32 px-6 relative bg-[#0A0A0A] overflow-hidden">
+        {/* Subtle red/gold ambient glow specifically for the Women's initiative */}
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-red-900/10 blur-[150px] rounded-full pointer-events-none"></div>
+        
+        <div className="max-w-site mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="border-l-[3px] border-gold pl-8 py-4"
+          >
+            <h2 className="text-gold text-xs uppercase tracking-[4px] font-bold mb-4">Global Solidarity</h2>
+            <h3 className="font-serif text-4xl md:text-5xl text-white mb-6">MENTORx Women</h3>
+            <p className="font-serif text-xl text-gold-light italic mb-8">
+              "Possibilities are endless here; we make your dreams come true."
+            </p>
+            <div className="space-y-6 text-white/70 font-light leading-relaxed">
+              <p>
+                A space where women from every background can come together in community and reach their maximum potential. We are goal chasers, dreamers, and hardworking hustlers ready to reach for more.
+              </p>
+              <p>
+                Through the <strong>'WoWoman'</strong> movement, we ensure women know their worth, encouraging them to be brave and ask for what they deserve. Future generations of working women will thank you.
+              </p>
+            </div>
+            <Link to="/women" className="mt-10 border border-gold text-white hover:bg-gold hover:text-primary transition-all duration-300 px-8 py-3 text-xs uppercase tracking-[2px] font-bold inline-block">
+              Explore The Movement
+            </Link>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="aspect-[4/3] bg-[#111111] border border-gold-dark/30 p-8 flex items-center justify-center group relative overflow-hidden shadow-2xl"
+          >
+            <div className="absolute inset-0 bg-gradient-to-tr from-gold/5 to-transparent"></div>
+            <div className="text-center relative z-10">
+              <h4 className="font-serif text-3xl text-white mb-4 group-hover:scale-105 transition-transform duration-500">WoWoman</h4>
+              <p className="text-gold text-sm tracking-widest uppercase">Placeholder</p>
+              <div className="w-16 h-[1px] bg-gold-dark mx-auto mt-6"></div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SECTION 5.2: TRUSTED PARTNERS MARQUEE/GRID (NEW) */}
+      <section className="py-24 px-6 max-w-site mx-auto border-t border-gold-dark/20 text-center">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <h2 className="text-gold-dark text-xs uppercase tracking-[5px] font-bold mb-12">Empowering & Trusted By Global Institutions</h2>
+        </motion.div>
+        
+        {/* Simple Flex Grid for Partner Names (Replace text with img tags once you slice the logos from the PPT) */}
+        <motion.div 
+          initial={{ opacity: 0 }} 
+          whileInView={{ opacity: 1 }} 
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-60 hover:opacity-100 transition-opacity duration-500"
+        >
+          {/* These map directly to the MoU partners listed in the design doc */}
+          <span className="text-white/80 font-serif text-lg tracking-wide uppercase">IIT Kharagpur</span>
+          <span className="text-white/80 font-serif text-lg tracking-wide uppercase">CPA Australia</span>
+          <span className="text-white/80 font-serif text-lg tracking-wide uppercase">Chitkara University</span>
+          <span className="text-white/80 font-serif text-lg tracking-wide uppercase">Shiv Nadar University</span>
+          <span className="text-white/80 font-serif text-lg tracking-wide uppercase">VIT Vellore</span>
+          <span className="text-white/80 font-serif text-lg tracking-wide uppercase">IIT Delhi</span>
+        </motion.div>
+
+        <Link to="/partners" className="inline-block mt-12 text-gold-light hover:text-white text-xs uppercase tracking-widest transition-colors border-b border-transparent hover:border-white pb-1">
+          View All 50+ Partners & MoUs →
+        </Link>
+      </section>
+
       {/* SECTION 6: FINAL CTA */}
       <section className="py-40 px-6 text-center relative bg-[#050505]">
         <motion.div 
