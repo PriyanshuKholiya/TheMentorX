@@ -220,7 +220,7 @@ const About = () => {
                 <img 
                   src={founderImg} 
                   alt="Dr. Munish Jindal" 
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gold/10 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute bottom-0 left-0 right-0 bg-[#050505]/90 backdrop-blur-md p-5 border-t border-gold/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
