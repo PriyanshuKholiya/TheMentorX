@@ -9,6 +9,46 @@ import {
   mauritius, nepal, singapore, southAfrica, vietnam 
 } from '../assets/images/index.js';
 
+// ==========================================
+// PARTNER LOGO IMPORTS FOR MARQUEE
+// ==========================================
+import chitkaraLogo from '../assets/images/partners/chitkara.png';
+import thaparLogo from '../assets/images/partners/thapar-institute.png';
+import iitTirupatiLogo from '../assets/images/partners/iit-tirupati.png';
+import shardaLogo from '../assets/images/partners/sharda.png';
+import shivNadarLogo from '../assets/images/partners/shiv-nadar.png';
+import amityLogo from '../assets/images/partners/amity.png';
+import iitKharagpurLogo from '../assets/images/partners/iit-kharagpur.png';
+import cpaLogo from '../assets/images/partners/cpa-australia.png';
+import ikgptuLogo from '../assets/images/partners/ikgptu.png';
+import cgcLogo from '../assets/images/partners/cgc-mohali.png';
+import iitRoparLogo from '../assets/images/partners/iit-ropar.png';
+import iitDelhiLogo from '../assets/images/partners/iit-delhi.png';
+import lpuLogo from '../assets/images/partners/lpu.png';
+import chandigarhUnivLogo from '../assets/images/partners/chandigarh-univ.png';
+
+// Marquee Row 1 (Moving Left)
+  const marqueeRow1 = [
+    { name: "IIT Delhi", img: iitDelhiLogo },
+    { name: "CPA Australia", img: cpaLogo },
+    { name: "IIT Kharagpur", img: iitKharagpurLogo },
+    { name: "Shiv Nadar University", img: shivNadarLogo },
+    { name: "Thapar Institute", img: thaparLogo },
+    { name: "Amity University", img: amityLogo },
+    { name: "Chandigarh University", img: chandigarhUnivLogo },
+  ];
+
+  // Marquee Row 2 (Moving Right)
+  const marqueeRow2 = [
+    { name: "IIT Ropar", img: iitRoparLogo },
+    { name: "Chitkara University", img: chitkaraLogo },
+    { name: "IIT Tirupati", img: iitTirupatiLogo },
+    { name: "Sharda University", img: shardaLogo },
+    { name: "Lovely Professional University", img: lpuLogo },
+    { name: "IKGPTU", img: ikgptuLogo },
+    { name: "CGC Mohali", img: cgcLogo },
+  ];
+  
 const Home = () => {
   // Animation Variants for staggered loading
   const containerVariants = {
@@ -327,32 +367,90 @@ const Home = () => {
         </div>
       </section>
 
-      {/* SECTION 5.2: TRUSTED PARTNERS MARQUEE/GRID (NEW) */}
-      <section className="py-24 px-6 max-w-site mx-auto border-t border-gold-dark/20 text-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <h2 className="text-gold-dark text-xs uppercase tracking-[5px] font-bold mb-12">Empowering & Trusted By Global Institutions</h2>
-        </motion.div>
+      {/* SECTION 5.2: TRUSTED PARTNERS MARQUEE (NO FILTERS) */}
+      <section className="py-24 max-w-[100vw] overflow-hidden border-t border-gold-dark/20 bg-[#050505]">
         
-        {/* Simple Flex Grid for Partner Names (Replace text with img tags once you slice the logos from the PPT) */}
-        <motion.div 
-          initial={{ opacity: 0 }} 
-          whileInView={{ opacity: 1 }} 
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-          className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-60 hover:opacity-100 transition-opacity duration-500"
-        >
-          {/* These map directly to the MoU partners listed in the design doc */}
-          <span className="text-white/80 font-serif text-lg tracking-wide uppercase">IIT Kharagpur</span>
-          <span className="text-white/80 font-serif text-lg tracking-wide uppercase">CPA Australia</span>
-          <span className="text-white/80 font-serif text-lg tracking-wide uppercase">Chitkara University</span>
-          <span className="text-white/80 font-serif text-lg tracking-wide uppercase">Shiv Nadar University</span>
-          <span className="text-white/80 font-serif text-lg tracking-wide uppercase">VIT Vellore</span>
-          <span className="text-white/80 font-serif text-lg tracking-wide uppercase">IIT Delhi</span>
-        </motion.div>
+        {/* Local Styles for Infinite Marquee */}
+        <style>
+          {`
+            @keyframes marqueeLeft {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+            @keyframes marqueeRight {
+              0% { transform: translateX(-50%); }
+              100% { transform: translateX(0); }
+            }
+            .animate-marquee-left {
+              animation: marqueeLeft 40s linear infinite;
+            }
+            .animate-marquee-right {
+              animation: marqueeRight 40s linear infinite;
+            }
+            /* Pauses the animation when the user hovers over the section */
+            .marquee-container:hover .animate-marquee-left,
+            .marquee-container:hover .animate-marquee-right {
+              animation-play-state: paused;
+            }
+          `}
+        </style>
 
-        <Link to="/partners" className="inline-block mt-12 text-gold-light hover:text-white text-xs uppercase tracking-widest transition-colors border-b border-transparent hover:border-white pb-1">
-          View All 50+ Partners & MoUs →
-        </Link>
+        <div className="px-6 mb-12 text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="text-gold-dark text-xs uppercase tracking-[5px] font-bold">Empowering & Trusted By Global Institutions</h2>
+          </motion.div>
+        </div>
+        
+        {/* Marquee Wrapper */}
+        <div className="marquee-container flex flex-col gap-10 relative w-full overflow-hidden">
+          
+          {/* Fading Edges for smooth entry/exit */}
+          <div className="absolute inset-y-0 left-0 w-24 md:w-48 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-24 md:w-48 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none"></div>
+
+          {/* Row 1: Moving Left */}
+          <div className="flex w-max animate-marquee-left">
+            {[...marqueeRow1, ...marqueeRow1].map((partner, idx) => (
+              <div key={idx} className="flex items-center justify-center w-48 md:w-64 px-8 group">
+                {partner.img ? (
+                  <img 
+                    src={partner.img} 
+                    alt={partner.name} 
+                    /* THE FIX: Removed grayscale and opacity filters. 
+                       Added hover lift (-translate-y-2) for interactivity. */
+                    className="max-h-12 md:max-h-16 w-auto object-contain transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2"
+                  />
+                ) : (
+                  <span className="text-white font-serif text-lg tracking-wide uppercase opacity-80">{partner.name}</span>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Row 2: Moving Right */}
+          <div className="flex w-max animate-marquee-right">
+            {[...marqueeRow2, ...marqueeRow2].map((partner, idx) => (
+              <div key={idx} className="flex items-center justify-center w-48 md:w-64 px-8 group">
+                {partner.img ? (
+                  <img 
+                    src={partner.img} 
+                    alt={partner.name} 
+                    className="max-h-12 md:max-h-16 w-auto object-contain transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2"
+                  />
+                ) : (
+                  <span className="text-white font-serif text-lg tracking-wide uppercase opacity-80">{partner.name}</span>
+                )}
+              </div>
+            ))}
+          </div>
+
+        </div>
+
+        <div className="text-center mt-16 px-6">
+          <Link to="/partners" className="inline-block text-gold-light hover:text-white text-xs uppercase tracking-widest transition-colors border-b border-transparent hover:border-white pb-1">
+            View All 50+ Partners & MoUs →
+          </Link>
+        </div>
       </section>
 
       {/* SECTION 6: FINAL CTA */}
