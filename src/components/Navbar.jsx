@@ -46,9 +46,9 @@ const Navbar = () => {
               <Link to="/about" className="hover:text-gold transition-all duration-300">About</Link>
               <Link to="/programs" className="hover:text-gold transition-all duration-300">Programs</Link>
               <Link to="/events" className="hover:text-gold transition-all duration-300">Events</Link>
+              <Link to="/coe" className="hover:text-gold transition-all duration-300">CoE</Link>
               <Link to="/team" className="hover:text-gold transition-all duration-300">Team</Link>
               <Link to="/partners" className="hover:text-gold transition-all duration-300">Partners</Link>
-              <Link to="/coe" className="hover:text-gold transition-all duration-300">CoE</Link>
             </div>
 
             {/* Subtle Vertical Divider */}
