@@ -35,9 +35,36 @@ const Home = () => {
 
   // Content Arrays
   const coreOfferings = [
-    { title: "School of Learning", desc: "Futuristic Technologies, Lifeskills & Entrepreneurship.", link: "/programs" },
-    { title: "Faculty Development", desc: "Enhancing academic skills in AI, Robotics, and Data Science.", link: "/programs" },
-    { title: "Incubation Centre", desc: "Bridging the gap from academia to industry for emerging startups.", link: "/coe" }
+    { 
+      title: "School of Learning", 
+      desc: "Specialising in international educational opportunities, we handhold students in Lifeskills, Futuristic Technologies, and Entrepreneurship to bring transformation and stimulate a creative environment.", 
+      link: "/programs" 
+    },
+    { 
+      title: "Faculty Development", 
+      desc: "Forming a bridge between industry and academia, we impart fundamental concepts in new age technologies like AI, Robotics, IoT, and Cloud Computing to empower technical faculty members.", 
+      link: "/programs" 
+    },
+    { 
+      title: "CoE & Incubation", 
+      desc: "Supporting institutions to become competitive in the global digital economy, we actively bridge the gap from academia to industry by incubating startups and fostering innovation right at the institute.", 
+      link: "/coe" 
+    },
+    { 
+      title: "Corporate Training & MDP", 
+      desc: "Providing professionals the opportunity to immerse themselves in management best practices and emerging technologies like VR, AR, and Machine Learning to accelerate performance and leadership effectiveness.", 
+      link: "/programs" 
+    },
+    { 
+      title: "Hackathons & Ideathons", 
+      desc: "Digital marathons designed as new-age tools to innovate, ideate, and engage campus talent. We offer a global platform to rethink concepts, encourage creativity, and shape a sustainable future.", 
+      link: "/events" 
+    },
+    { 
+      title: "Careers & Internships", 
+      desc: "Bridging the gap between academia and industry through hands-on internships in intelligent automation, smart manufacturing, and robotics, alongside comprehensive on-campus and off-campus placement drives.", 
+      link: "/careers" 
+    }
   ];
 
   const globalCountries = [
