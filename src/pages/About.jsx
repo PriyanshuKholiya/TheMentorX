@@ -1,7 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+
 // Direct image imports
 import founderImg from '../assets/images/about/dr-munish-jindal.jpg';
+// Added the new network image import
+import networkImg from '../assets/images/about/mentoring-network.jpeg';
 
 const About = () => {
   return (
@@ -28,11 +31,16 @@ const About = () => {
             viewport={{ once: true }}
             className="aspect-square bg-[#0A0A0A] border border-gold-dark/30 flex items-center justify-center relative overflow-hidden group shadow-2xl"
           >
+            {/* FIX: Swapped hardcoded src for import variable.
+              Removed opacity-60 so there is no grey tint. 
+              Added object-center for perfect framing. 
+            */}
             <img 
-              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800" 
+              src={networkImg} 
               alt="Mentoring Network Global Reach" 
-              className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105"
+              className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
             />
+            {/* Kept the bottom gradient so the text remains readable */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent pointer-events-none"></div>
             
             {/* Overlay Badge for Authority */}
