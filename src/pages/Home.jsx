@@ -229,8 +229,17 @@ const Home = () => {
       {/* SECTION 5: GLOBAL REACH */}
       <section className="bg-charcoal py-32 border-y border-gold-dark/20 overflow-hidden relative">
         <div className="max-w-site mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+          
+          {/* Changed to a 12-column grid to give the logos more horizontal space */}
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            {/* Left: Text Content (takes up 4 columns) */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }} 
+              whileInView={{ opacity: 1, x: 0 }} 
+              viewport={{ once: true }}
+              className="lg:col-span-4"
+            >
               <h2 className="text-gold text-xs uppercase tracking-[4px] font-bold mb-6">Global Reach</h2>
               <h3 className="font-serif text-4xl md:text-5xl text-white mb-8">Connecting the World Through Mentorship</h3>
               <p className="text-white/70 text-lg leading-relaxed mb-8">
@@ -241,30 +250,33 @@ const Home = () => {
               </Link>
             </motion.div>
 
+            {/* Right: Logo Grid (takes up 8 columns for much bigger boxes) */}
             <motion.div 
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="grid grid-cols-2 sm:grid-cols-5 gap-4"
+              className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-5"
             >
               {globalCountries.map((country, idx) => (
                 <div 
                   key={idx} 
-                  className="bg-[#0A0A0A] border border-gold-dark/30 p-4 sm:p-8 flex flex-col items-center justify-center text-center hover:border-gold group transition-all duration-300 min-h-[160px]"
+                  className="bg-[#0A0A0A] border border-gold-dark/30 p-4 flex flex-col items-center justify-between text-center hover:border-gold group transition-all duration-300 min-h-[180px] shadow-lg hover:shadow-[0_5px_20px_rgba(201,168,76,0.15)]"
                 >
-                  <div className="flex-grow flex items-center justify-center w-full mb-4">
+                  <div className="flex-grow flex items-center justify-center w-full mt-2 mb-4">
                     <img 
                       src={country.logo} 
                       alt={country.name} 
-                      className="max-h-20 w-auto object-contain transition-transform duration-500 group-hover:scale-110" 
+                      /* The Fix: h-24 on mobile, h-28 on desktop, and a subtle glow */
+                      className="h-24 sm:h-28 w-auto object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_8px_rgba(255,255,255,0.08)]" 
                     />
                   </div>
-                  <span className="text-white font-bold text-[11px] uppercase tracking-wider group-hover:text-gold transition-colors">
+                  <span className="text-white font-bold text-[11px] uppercase tracking-wider group-hover:text-gold transition-colors pb-2">
                     {country.name}
                   </span>
                 </div>
               ))}
             </motion.div>
+            
           </div>
         </div>
       </section>
